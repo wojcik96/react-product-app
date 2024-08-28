@@ -1,0 +1,24 @@
+.product {
+  margin-bottom: 20px;
+}
+
+.product__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.product__link:hover {
+  color: #007bff;
+  text-decoration: underline;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product__image {
+  width: 100px;
+  margin-right: 20px;
+}
