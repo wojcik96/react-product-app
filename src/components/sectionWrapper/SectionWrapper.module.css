@@ -1,0 +1,14 @@
+.sectionWrapper {
+  padding: 20px;
+}
+
+.sectionWrapper__title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sectionWrapper__content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
