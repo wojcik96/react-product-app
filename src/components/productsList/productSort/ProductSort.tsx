@@ -14,7 +14,7 @@ function ProductSort({ onSortChange }: ProductSortProps) {
   };
 
   return (
-    <div className={classes.productSort}>
+    <section className={classes.productSort}>
       <label className={classes.productSort__label} htmlFor="sortOrder">
         Sort by:
       </label>
@@ -30,7 +30,7 @@ function ProductSort({ onSortChange }: ProductSortProps) {
         <option value={SortOption.TITLE_ASC}>Title (A to Z)</option>
         <option value={SortOption.TITLE_DESC}>Title (Z to A)</option>
       </select>
-    </div>
+    </section>
   );
 }
 

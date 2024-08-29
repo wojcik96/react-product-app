@@ -8,7 +8,7 @@
   margin-right: 10px;
   font-weight: bold;
   font-size: 16px;
-  color: #333;
+  color: var(--main-font-color);
 }
 
 .productSort__select {
@@ -17,7 +17,7 @@
   border-radius: 4px;
   font-size: 14px;
   color: #333;
-  background-color: #fff;
+  background-color: var(--bg-color-light-gr);
   transition: border-color 0.2s ease;
 }
 

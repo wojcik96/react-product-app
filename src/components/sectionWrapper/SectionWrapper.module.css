@@ -1,5 +1,8 @@
 .sectionWrapper {
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
+  text-align: center;
 }
 
 .sectionWrapper__title {
@@ -8,7 +11,9 @@
 }
 
 .sectionWrapper__content {
-  background-color: #fff;
-  padding: 10px;
+  background-color: #8f8f8f;
+  padding: 20px;
   border-radius: 8px;
+  box-shadow: var(--box-shadow-white);
 }
+  
