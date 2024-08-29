@@ -16,18 +16,20 @@ function ProductsPage() {
     useSort(fetchedProduct);
 
   return (
-    <StatusMessage
-      isLoading={isFetching}
-      error={error}
-      noData={!fetchedProduct}
-    >
-      <SectionWrapper title="Products Page">
-        <>
-          <ProductSort onSortChange={handleSortChange} />
+    <SectionWrapper title="Products Page">
+      <>
+        <ProductSort onSortChange={handleSortChange} />
+        {isFetching || error ? (
+          <StatusMessage
+            isLoading={isFetching}
+            error={error}
+            noData={!fetchedProduct}
+          />
+        ) : (
           <ProductList productsList={sortedProducts} />
-        </>
-      </SectionWrapper>
-    </StatusMessage>
+        )}
+      </>
+    </SectionWrapper>
   );
 }
 

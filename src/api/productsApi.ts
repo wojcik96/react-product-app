@@ -15,5 +15,9 @@ export async function fetchProducts(): Promise<Product[]> {
 }
 
 export async function fetchProductDetails(id: string): Promise<Product> {
-  return fetchFromApi<Product>(`/products/${id}`);
+  if (id) {
+    return fetchFromApi<Product>(`/products/${id}`);
+  }
+
+  throw new Error("No id");
 }

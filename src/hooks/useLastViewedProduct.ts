@@ -6,7 +6,9 @@ function useLastViewedProduct() {
   useEffect(() => {
     const savedId = localStorage.getItem("lastViewedProdId");
     
-    savedId && setLastViewedProduct(savedId);
+    if (savedId){
+      setLastViewedProduct(savedId)
+    }
   }, []);
 
   useEffect(() => {
