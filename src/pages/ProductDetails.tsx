@@ -34,7 +34,7 @@ function ProductDetails() {
         <img
           className={classes.productDetails__image}
           src={image}
-          alt={title}
+          alt=""
         />
         <p className={classes.productDetails__price}>Price: {price} PLN</p>
         <p className={classes.productDetails__description}>

@@ -11,6 +11,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  --white-font-color: #fff;
+  --main-font-color: #333;
+  --accennt-font-color: #242424;
+  --nav-font-color: #afafaf;
+
+  --bg-color-dark-gr: #333;
+  --bg-color-light-gr: #f5f5f5;
+
+  --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  --box-shadow-white: 0 4px 6px rgba(255, 255, 255, 0.1); 
 }
 
 body {
@@ -28,6 +39,14 @@ main {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+a {
+  color: #242424;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 @media (prefers-color-scheme: light) {
