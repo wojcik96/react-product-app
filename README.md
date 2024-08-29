@@ -20,7 +20,7 @@ The **Product App** is a simple React application designed to show skills in bui
 - **CSS**: Used for styling the application.
 - **Vite**: A build tool that provides a fast development environment.
 
-## Code Explanation
+## Key Functionalities and Code Insights
 
 ### **Managing Last Viewed Product**
 This code defines a custom React hook called `useLastViewedProduct`. It handles storing and retrieving the ID of the last viewed product from the browser's local storage
