@@ -1,40 +1,33 @@
-import { Link } from "react-router-dom";
-import classes from './Products.module.css'; 
+import useFetch from "../hooks/useFetch";
+import ProductList from "../components/productsList/ProductList";
+import ProductSort from "../components/productsList/productSort/ProductSort";
+import useSort from "../hooks/useSort";
+import { fetchProducts } from "../api/productsApi";
+import SectionWrapper from "../components/sectionWrapper/SectionWrapper";
+import StatusMessage from "../components/statusMessage/StatusMessage";
 
 function ProductsPage() {
-  return (
-    <div className={classes.productsPage}>
-      <h1 className={classes.productsPage__title}>Products Page</h1>
+  const {
+    fetchedData: fetchedProduct,
+    isFetching,
+    error,
+  } = useFetch(fetchProducts);
+  const { sortedData: sortedProducts, handleSortChange } =
+    useSort(fetchedProduct);
 
-      <section className={classes.productsPage__section}>
-        <ul className={classes.productsPage__list}>
-          <li className={classes.productsPage__item}>
-            <Link className={classes.productsPage__link} to="/products/1">
-              <img
-                className={classes.productsPage__image}
-                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
-              />
-              <p className={classes.productsPage__description}>
-                Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops - 50.00 PLN
-              </p>
-            </Link>
-          </li>
-          <li className={classes.productsPage__item}>
-            <Link className={classes.productsPage__link} to="/products/1">
-              <img
-                className={classes.productsPage__image}
-                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
-              />
-              <p className={classes.productsPage__description}>
-                Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops - 50.00 PLN
-              </p>
-            </Link>
-          </li>
-        </ul>
-      </section>
-    </div>
+  return (
+    <StatusMessage
+      isLoading={isFetching}
+      error={error}
+      noData={!fetchedProduct}
+    >
+      <SectionWrapper title="Products Page">
+        <>
+          <ProductSort onSortChange={handleSortChange} />
+          <ProductList productsList={sortedProducts} />
+        </>
+      </SectionWrapper>
+    </StatusMessage>
   );
 }
 
