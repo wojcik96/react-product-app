@@ -6,7 +6,6 @@ function StatusMessage({
   error,
   noId,
   noData,
-  children,
 }: StatusMessageProps) {
   if (isLoading) {
     return <Spinner />;
@@ -16,10 +15,7 @@ function StatusMessage({
     return <p>{error.message}</p>;
   } else if (noData) {
     return <p>Product not found</p>;
-  }
-  if (children) {
-    return <>{children}</>;
-  }
+  } 
 }
 
 export default StatusMessage;

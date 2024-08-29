@@ -13,7 +13,7 @@ function useSort(fetchedData?: Product[]) {
   const handleSortChange = (sortOrder: SortOption) => {
     if (!fetchedData) return;
 
-    let sortedData = [...fetchedData];
+    const sortedData = [...fetchedData];
     sortedData.sort(getSortedFun(sortOrder));
     setSortedData(sortedData);
   };

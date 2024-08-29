@@ -11,18 +11,17 @@ import useLastViewedProduct from "../hooks/useLastViewedProduct";
 function ProductDetails() {
   const { setLastViewedProduct } = useLastViewedProduct();
   const { id } = useParams<{ id: string }>();
-
-  if (!id) return <StatusMessage noId={!id} />;
-
-  useEffect(() => {
-    setLastViewedProduct(id);
-  }, [id]);
-
   const { isFetching, fetchedData: product, error} = useFetch(() => fetchProductDetails(id));
 
-  if (isFetching || error || !product) {
+  useEffect(() => {
+    if(id && product){
+      setLastViewedProduct(id);
+    }
+  }, [product]);
+ 
+  if (!id || isFetching || !product || error ) {
     return (
-      <StatusMessage isLoading={isFetching} error={error} noData={!product} />
+      <StatusMessage isLoading={isFetching} error={error} noData={!product} noId={!id}/>
     );
   }
 
