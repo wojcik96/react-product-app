@@ -7,10 +7,12 @@ function ProductItem({ id, image, title, price }: Product) {
   return (
     <li className={classes.product}>
       <Link className={classes.product__link} to={`/products/${id}`}>
-        <img className={classes.product__image} src={image} alt="" />
+        <div className={classes.product__imageBox}>
+          <img className={classes.product__image} src={image} alt="" />
+        </div>
         <div className={classes.product__content}>
-          <h2>{title}</h2>
-          <p>{price} PLN</p>
+          <h2 className={classes.product__title}>{title}</h2>
+          <p className={classes.product__price}>{price} PLN</p>
         </div>
       </Link>
     </li>
