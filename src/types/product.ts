@@ -6,8 +6,8 @@ interface Product {
   price: string;
   image: string;
   rating?: {
-    count: number,
-    rate: number
+    count: number;
+    rate: number;
   };
 }
 
