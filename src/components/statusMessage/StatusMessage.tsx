@@ -17,8 +17,9 @@ function StatusMessage({
   } else if (noData) {
     return <p>Product not found</p>;
   }
-
-  return <>{children}</>;
+  if (children) {
+    return <>{children}</>;
+  }
 }
 
 export default StatusMessage;

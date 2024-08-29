@@ -1,9 +1,9 @@
 interface StatusMessageProps {
-  isLoading: boolean;
+  isLoading?: boolean;
   noId?: boolean;
   error?: { message: string } | undefined;
   noData?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default StatusMessageProps;
